@@ -1,0 +1,699 @@
+/* グローバルリセット */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::before , ::after { /* デフォルトのCSSを消す */
+	box-sizing: inherit;
+}
+
+button { /* デフォルトのCSSを消す */
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	vertical-align: middle;
+	text-align: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+/* 全体 */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8vh;
+    width: 100%;
+    background-color: rgba(999, 999, 999, 0.6); /* ヘッダーの背景色 */
+    z-index: 1000; /* ヘッダーを他の要素より前面に表示 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* 必要に応じて影を追加 */
+    padding: 0.93vh 1.85vh;
+    display: flex;
+    justify-content: space-between;
+}
+/* ヘッダーロゴ全体 */
+header a.logo {
+    display: flex;
+    text-decoration: none; /* リンクの下線を消す */
+    height: 80%; /* ロゴリンクの高さ */
+    margin-top: 0.46vh;
+}
+/* ヘッダーロゴ画像 */
+header a.logo img {
+    max-height: 100%; /* ロゴ画像がヘッダーからはみ出さないようにする */
+    object-fit: cover; /* 画像は縦横比を維持したまま、表示領域を完全に覆うように拡大縮小される */
+    min-width: 100%;
+    min-height: 100%;
+}
+/* グローバルナビ */
+nav .pc {
+    display: flex;
+    align-items: center;
+    height: 100%; /* ナビゲーションの高さをヘッダーの高さに合わせる */
+}
+/* ヘッダーリスト */
+nav a {
+    margin-left: 2.5vh; /* ナビゲーション項目間のスペース */
+    margin-top: 3vh;
+    text-decoration: none;
+    color: #72533E;
+    font-size: 2.5vh;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+/* ヘッダーリストPC版 */
+.pc {
+    line-height: 3em;
+}
+/* ヘッダーリスト項目全体 */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+/* ヘッダーリスト項目 */
+nav ul li {
+    display: inline;
+}
+/* ヘッダーリスト項目リンク */
+nav ul li a {
+    text-decoration: none;
+    color: #72533E;
+    font-weight: bold;
+}
+/* 電話アイコン */
+nav a img {
+    height: 1em; /* アイコンの高さを設定 */
+}
+/* メインコンテンツ */
+main,footer {
+    background-color: #FCF9EA;
+    width: 100vw;
+}
+/* トップアイキャッチ */
+.image-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* 必要に応じて画像のはみ出し部分を隠す */
+    position: relative;
+}
+/* トップアイキャッチ画像 */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* トップアイキャッチ店名 */
+.brandicon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30% !important; /* スマホ画面での幅を調整 */
+    height: auto !important;
+    max-width: 100% !important; /* 画面の幅を超えないように */
+    max-height: 100% !important; /* 画面の高さを超えないように */
+}
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { display: block !important; }
+.sp { display: none !important; }
+/*ハンバーガーメニューのリスト（スマホ用）を非表示*/
+.sm {
+    display: none;
+}
+/*about lunchmenu menu blog access コンテナ共通設定*/
+.container-about,
+.container-lunchmenu,
+.container-menu,
+.blog-container,
+.container-access {
+    display: flex;
+    justify-content: center;
+    max-width: 100vw;
+}
+section {
+    width: 64.47vw;
+}
+/* タイトル共通設定 */
+.title {
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+/* アバウトサブタイトル調整 */
+.shop {
+    margin-top: -3vh;
+    width: 50%;
+}
+/* aboutテキストとイラストと写真のコンテナ */
+.about-text-imgs {
+    display: flex;
+    align-items: center;
+    margin-top: 5vh;
+}
+/*aboutテキストとイラストのコンテナ*/
+.about-text-img {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2vw;
+}
+/* aboutテキストとイラスト */
+.about-text {
+    width: 30vw;
+    height: auto;
+}
+.illust {
+    width: 20vw;
+    margin-left: 5vw;
+}
+/* カルーセル全体 */
+.carousel {
+    /* 水平方向中央寄せ */
+    display: flex;
+    width: 30vw;
+    margin-left: 2vw;
+    }
+/* カルーセル内容 */
+.contains {
+    /* サイズは自由に変更してください。*/
+    /* 下の.slideも同じサイズにしてください。 */
+    width: 100%;
+    height: 45vh;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+/* スライド切り換え用ラジオボタンは常に非表示 */
+.slide_select {
+    display: none;
+}
+/* 各スライド */
+.slide {
+    /* サイズは自由に変更してください。*/
+    /* 上の.containsも同じサイズにしてください。 */
+    width: 100%;
+    height: 45vh;
+    position: absolute;
+    /* スライドの初期値は選択されていないので透明にしておく */
+    opacity: 0;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像は縦横比を維持したまま、表示領域を完全に覆うように拡大縮小される */
+}
+/* 前へ次へボタン */
+.scroll_button {
+    position: absolute;
+    display: block;
+    height: 2vw;
+    width: 2vw;
+    /* 縦中央から20px上の位置 */
+    top: 50%;
+    /* 上辺と右辺のみ幅5pxの枠線 */
+    border-width: 0.5vw 0.5vw 0 0;
+    border-style: solid;
+    border-color: #fdfdfd;
+    cursor: pointer;
+    /* 普段はボタンはやや薄くする */
+    opacity: 0.5;
+    /* スライドよりも前面にする */
+    z-index: 3;
+}
+/* ホバー時にボタンを強調 */
+.scroll_button:hover {
+    opacity: 1;
+}
+/* 前へボタン */
+.scroll_prev {
+    left: 1vw;
+    /* 上辺と右辺の枠線を回転して"＜"にする */
+    transform: rotate(-135deg);
+}
+/* 次へボタン */
+.scroll_next {
+    right: 1vw;
+    /* 上辺と右辺の枠線を回転して"＞"にする */
+    transform: rotate(45deg);
+}
+/* スライド移動ボタンエリア */
+.move_controler {
+    position: absolute;
+    bottom: 1vw;
+    width: 100%;
+    text-align: center;
+}
+/* スライド移動の各ボタン */
+.button_move {
+    display: inline-block;
+    height: 0.8vw;
+    width: 0.8vw;
+    margin: 0 0.2vw;
+    border-radius: 100%;
+    cursor: pointer;
+    /* 普段はやや薄くする */
+    opacity: 0.5;
+    /* スライドより前面にする */
+    z-index: 3;
+}
+/* ホバー時はやや明るくする */
+.button_move:hover {
+    opacity: 0.75;
+}
+/* スライド移動ボタンの色 */
+.button_move {
+    background-color: #fdfdfd;
+}
+/* 1番目のスライド選択時 */
+/* 1番目のスライドの透明度を0にして表示する */
+.slide_select:nth-of-type(1):checked ~ .slide:nth-of-type(1) {
+    opacity: 1;
+}
+/* スライド移動ボタンの1個目を明るくする */
+/* （今選択されていることが分かるように） */
+.slide_select:nth-of-type(1):checked ~ .move_controler .button_move:nth-of-type(1) {
+    opacity: 1;
+}
+.slide_select:nth-of-type(2):checked ~ .slide:nth-of-type(2) {
+    opacity: 1;
+}
+/* 2番目のスライド選択時（1番目のスライドと同じことをする） */
+.slide_select:nth-of-type(2):checked ~ .move_controler .button_move:nth-of-type(2) {
+    opacity: 1;
+}
+/* 3番目のスライド選択時 */
+.slide_select:nth-of-type(3):checked ~ .slide:nth-of-type(3) {
+    opacity: 1;
+}
+.slide_select:nth-of-type(3):checked ~ .move_controler .button_move:nth-of-type(3) {
+    opacity: 1;
+}
+/* 4番目のスライド選択時 */
+.slide_select:nth-of-type(4):checked ~ .slide:nth-of-type(4) {
+    opacity: 1;
+}
+.slide_select:nth-of-type(4):checked~ .move_controler .button_move:nth-of-type(4) {
+    opacity: 1;
+}
+/* ボタン */
+.btn {
+    display: flex;
+    justify-content:center;
+    margin-top: 10vh;
+}
+/* ボタン全体 */
+.btn button {
+    display: flex;
+    align-items: center;
+    background-color: #72533E; /* 背景色を設定 */
+    border: none;
+    border-radius: 5vw; /* ボタンの角を丸く */
+    color: #FFFFFF; /* 文字色を白に */
+    font-size: 1.5em;
+    padding: 0.7vw 2vw;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family:  'Noto Sans JP', sans-serif;
+    position: relative;
+}
+/* ボタンアイコン */
+.btn button .icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5vw;
+    height: 2.5vw;
+    margin-right: 0.5vw;
+}
+/* ボタンアイコン白丸 */
+.btn button .icon-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    background-color: #FFFFFF; /* 白い丸 */
+    border-radius: 50%;
+    z-index: 0; /* 背景に配置 */
+}
+/* ボタンアイコン画像 */
+.btn button img {
+    width: 1.5vw; /* アイコンの幅を設定 */
+    height: auto; /* アスペクト比を維持 */
+    position: relative;
+    z-index: 1; /* アイコンを前面に配置 */
+}
+/* ボタンホバー */
+.btn button:hover {
+    transform: translateY(0.5vw); /* ボタンが下に動く */
+    box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.5); /* 影を追加 */
+}
+/* ボタンクリック後 */
+.btn button:active {
+    transform: translateY(1vh); /* ボタンがさらに下に動く */
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3); /* 押された時の影 */
+}
+/* ランチメニュー */
+/* ランチメニューパスタ見出し */
+.lunchmenu h2 {
+    text-align: center;
+}
+/* ランチメニュー見出し下のコンテナ */
+.lunchmenu-img-text-container {
+    display: flex;
+    margin-top: 5vh;
+    align-items: center; 
+}
+/* ランチメニュー左側 */
+.lunchmenu-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    margin-right: 2vw;
+}
+/* ランチメニュー右側 */
+.lunchmenu-right {
+    width: 46%;
+    justify-content: flex-end;
+    margin-top: -1.3vw;
+}
+.lunchmenu-right img {
+    width: 100%;
+    height: auto;
+}
+/* ランチメニューピザ葉っぱ */
+.leaf-container {
+    display: flex;
+    width: 100%;
+    margin-top: 5vw;
+}
+.leaf-container img {
+    display: block;
+    margin: 0 auto;
+}
+/* メニュー */
+.menu-img {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 3vh;
+    flex-wrap: wrap; /* 画像が横に収まりきらない場合に改行させる */
+    box-sizing: border-box; /* ボックスのサイズを調整 */
+}
+.menu-img img {
+    width: 32%; /* 3つの画像が均等に並ぶように設定 */
+    box-sizing: border-box; /* ボックスのサイズを調整 */
+}
+.menu-text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3vh;
+}
+.menu-text img {
+    width: 49%;
+    height: auto;
+}
+/* お知らせ */
+.blog-img-container {
+    width: 100%;
+}
+.blog-img-container img {
+    width: 100%;
+    height: auto;
+}
+/* アクセス */
+/* アクセスコンテナ */
+.content {
+    display: flex;
+    margin-top: 3vh;
+    justify-content: space-between;
+    width: 100%;
+}
+/* Googleマップボタン */
+.map-btn {
+    margin-top: 1vh;
+}
+.google-map-button {
+    text-decoration: none;
+}
+/* 営業時間とか */
+.info {
+    margin-top: 2vh;
+    margin-left: 3.7vh;
+    width: 100%;
+    height: auto;
+}
+/* 看板 */
+.signboard {
+    margin-left: 28vw;
+    margin-top: -6vh;
+}
+/* フッター */
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-logo {
+    margin-top: 15vh;
+    margin-bottom: 3vh;
+    width: 15%;
+}
+footer p {
+    margin-top: 2vh;
+}
+
+@media only screen and (max-width: 750px) {
+    /* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+    .pc { display: none !important; }
+    .sp { display: block !important; }
+    /* ヘッダーロゴ全体 */
+    header a.logo {
+        height: 70%; /* ロゴリンクの高さ */
+        margin-top: 0.5vh;
+    }
+    /* ハンバーガーメニューの設定 */
+    #hamburger {
+        background-color: transparent;  /*透明の背景*/
+        position: relative;             /*ハンバーガーの横線の位置を決めるための基準*/
+        cursor: pointer;                /*リンクを示すカーソルを表示（指差しマーク）*/
+        margin: 0 0 0 auto;             /*左側に余白を作り、ハンバーガーメニューを右端に配置*/
+        height: 5.56vh;                   /*ヘッダーの高さと同じ60px*/
+        width: 5.56vh;                    /*高さと同じ幅*/
+    }
+    /* ハンバーガーメニューの３本線 */
+    .icon span {
+        position: absolute;       /*親要素である#hamburgerを基準に位置を指定*/
+        left: 1.39vh;               /*#hamburger内の左がら15pxに横線を配置（幅が60pxなので右からも15px）*/
+        width: 2.78vh;              /*横線の幅が30px*/
+        height: 0.37vh;              /*横線の高さが4px*/
+        background-color: #735240;  /*横線を茶色*/
+        border-radius: 0.74vh;       /*横線の両端の角に丸みを持たせる*/
+        transition: ease 0.55s;   /*変化の時間（easeは初期値）*/
+    }
+    .icon span:nth-of-type(1) {
+        top: 1.48vh;
+    }
+    .icon span:nth-of-type(2) {
+        top: 2.59vh;
+    }
+    .icon span:nth-of-type(3) {
+        bottom: 1.48vh;
+    }
+    /* ハンバーガーメニューの閉じる時 */
+    .close span:nth-of-type(1) {
+        transform: rotate(45deg); /*反時計回りに45度回転*/
+        top: 2.59vh;
+    }
+    .close span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .close span:nth-of-type(3) {
+        transform: rotate(-45deg); /*時計回りに45度回転*/
+        top: 2.59vh;
+    }
+    /* ハンバーガーメニューのリスト */
+    .sm {
+        top: 6.64vh;  /*headerの余白分*/
+        left: 0vh;  /*headerの余白分　ヘッダーには左右に15px余白があるので、headerの子要素となる.smは15px分内側に設置されます。その余白を埋めるために左に寄せる。*/
+        position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
+        z-index: 10;
+        width: 100%;
+        background-color: rgb(252,249,234);
+        line-height: 4em;
+    }
+    ul {
+        flex-direction: column;	/*ulのflexboxを縦並びにする*/  
+    }
+    li {
+        text-align: left;	/*メニューリストの文字を左寄せ*/
+        border-top: solid 0.5px #735240;	/*リストの境目に茶線 */
+    }
+    /* トップ画像にある電話リンク */
+    .sp.tell {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #735240;
+        font-size: 2em;
+        font-family: 'Noto Sans JP', sans-serif;
+        text-align: center;
+        width: max-content;
+    }
+    /* トップ画像にある電話リンクアイコンの設定 */
+    .sp.tell img {
+        margin-right: 0.74vh; /* アイコンとテキストの間にスペースを追加 */
+        width: 2.78vh; /* アイコンのサイズを調整 */
+        height: 2.78vh; /* アイコンのサイズを調整 */
+    }
+    /* トップアイキャッチ店名 */
+    .brandicon {
+        width: 80vw !important; /* デスクトップ画面でのサイズ */
+        height: auto !important;
+    }
+    /* セクション共通設定 */
+    section { width: 100vw; }
+    /* aboutサブタイトル幅を調整 */
+    .shop {
+        width: 80%;
+    }
+    /* about内の画像の幅を調整 */
+    .about-text-imgs {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text-img {
+        margin-right: 0;
+    }
+    /* about内の左側の幅を調整 */
+    .about-text-img img{
+        width: 100%;
+        margin: 0;
+    }
+    /* カルーセル */
+    .carousel {
+        margin-top: 5vh;
+        width: 100%;
+        margin-left: 0;
+    }
+    /* スクロールボタン */
+    .scroll_button {
+        height: 10vw;
+        width: 10vw;
+        /* 上辺と右辺のみ幅5pxの枠線 */
+        border-width: 3vw 3vw 0 0;
+    }
+    /* スライド移動の各ボタン */
+    .button_move {
+        height: 4vw;
+        width: 4vw;
+    }
+    /* ボタン全体 */
+    .btn button {
+        padding: 2vw 4vw;
+    }
+    /* ボタンアイコン */
+    .btn button .icon-wrapper {
+        width: 7vw;
+        height: 7vw;
+        margin-right: 1vw;
+    }
+    /* ボタンアイコン白丸 */
+    .btn button .icon-wrapper::before {
+        width: 7vw;
+        height: 7vw;
+    }
+    /* ボタンアイコン画像 */
+    .btn button img {
+        width: 5vw; /* アイコンの幅を設定 */
+        height: auto; /* アスペクト比を維持 */
+    }
+    /* ランチメニュー見出し下のコンテナ */
+    .lunchmenu-img-text-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* ランチメニュー左側右側 */
+    .lunchmenu-left,.lunchmenu-right {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /* メニュー */
+    .menu .title img {
+        width: 70%;
+    }
+    /* メニュー全体の幅調整 */
+    .container-menu img {
+        width: 100%;
+        height: auto;
+    }
+    /* メニュー画像のコンテナの幅調整 */
+    .menu-img,.menu-text {
+        width: 100%;
+    }
+    /* メニュー画像３枚目表示しないの調整 */
+    .menu-img img:nth-child(3) {
+        display: none; /* 3番目の画像（gokurakupurin）を非表示に */
+    }
+    /* メニュー画像の調整 */
+    .menu-img img {
+        width: 40%; /* 画像を横並びにするために幅を48%に設定 */
+        margin: 1%; /* 画像の間に余白を追加 */
+        
+    }
+    /* アクセス */
+    /* アクセスコンテナ */
+    .content {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vh;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .info {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info img {
+        width: 100%;
+        height: auto;
+        margin-top: 3vh;
+    }
+    .signboard {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .signboard img {
+        width: 70%;
+    }
+    .footer-logo {
+        margin-top: 15vh;
+        margin-bottom: 3vh;
+        width: 55%;
+    }
+    .footer-shopname {
+        width: 100%;
+    }
+}

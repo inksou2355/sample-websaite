@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプルサイト</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="../image/sample-shop-logo.png" alt="Taverna LAPUTA logo">
+        </a>
+        <!--ハンバーガーメニューここから-->
+        <div id="hamburger">
+            <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+        </div>
+        <!--ハンバーガーメニューここまで-->
+        <!--▽▽ハンバーガーメニューのリスト(スマホ)▽▽-->
+        <nav class="sm">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#lunchmenu">MENU</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#access">ACCESS</a></li>
+                <li><a href="#">TEL:0000-00-0000</a></li>            
+            </ul>
+        </nav>
+        <!--△△ハンバーガーメニューのリスト△△-->
+        <!--▽▽ヘッダーリスト(PC)▽▽-->    
+        <nav class="pc">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#lunchmenu">MENU</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#access">ACCESS</a></li>
+                <li>
+                    <a href="#">
+                    <img src="../image/電話の受話器のアイコン素材.png" alt="phone">
+                    0000-00-0000
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!--ヘッダーリスト(PC)ここまで-->    
+    </header>
+    <main>
+        <!--トップ-->    
+        <div class="image-container" id="home">
+            <img class="pc" src="../image/top-image.png" alt="Taverna LAPUTA">
+            <img class="sp background-image" src="../image/sm-top-img.png" alt="Taverna LAPUTA">
+            <img class="brandicon" src="../image/top-shop.png" alt="Taverna LAPUTA">
+            <a href="#" class="sp tell">
+                <img src="../image/電話の受話器のアイコン素材.png" alt="phone">0000-00-0000
+            </a>
+        </div> 
+        <!--アバウト-->    
+        <div class="container-about">
+            <section class="about">
+                <div class="title">
+                    <img src="../image/aboutonly.png" alt="about">
+                    <img class="shop" src="../image/about-shop-name.png" alt="shop-name">
+                </div>
+                <div class="about-text-imgs">
+                    <div class="about-text-img">
+                        <img class="about-text" src="../image/about-text.png" alt="text">
+                        <img class="illust" src="../image/Taverna_LAPUTA-removebg-preview.png" alt="text">
+                    </div>
+                    <!--カルーセル-->    
+                    <div class="carousel">
+                    <!-- スライドのリスト -->
+                        <div class="contains">
+                            <!-- スライドを選択するためのラジオボタンリスト。 -->
+                            <!-- 数は増減しても構わないです。 最初は1番目を選択状態(checked)にします。-->
+                            <!-- Slide各ラジオボタンに個別のidを定義して、nameはすべて同じ値にします。 -->
+                            <input class="slide_select" type="radio" id="SlideA" name="slide_check" checked />
+                            <input class="slide_select" type="radio" id="SlideB" name="slide_check" />
+                            <input class="slide_select" type="radio" id="SlideC" name="slide_check" />
+                            <input class="slide_select" type="radio" id="SlideD" name="slide_check" />
+                            <!-- スライド -->
+                            <!-- 上のラジオボックスと同じ数だけ記述します。-->
+                            <div class="slide">
+                                <!-- スライドの前へ、次へとスクロールさせるボタン -->
+                                <div class="scroll_controler">
+                                    <!-- 前へボタン forで戻る先のラジオボタンのidを書きます。-->
+                                    <!-- 先頭要素なので、最後のスライドのidである"SlideD"を書いています。 -->
+                                    <label class="scroll_button scroll_prev" for="SlideD"></label>
+                                    <!-- 次へボタン 上と同様にforで進む先のラジオボタンのidを書きます。-->
+                                    <!-- 進み先は2番目の要素なので、2番目のスライドのid"SlideB"を書いています。 -->
+                                    <label class="scroll_button scroll_next" for="SlideB"></label>
+                                </div>
+                                <!-- スライドの内容（ここでは画像）を記述します。 -->
+                                <!-- div要素に変えれば文字を加えることもできます。 -->
+                                <img src="../image/architecture-2562316_1280.jpg" alt="shop1">
+                            </div>
+                            <!-- スライド（2番目）内容は1個めと同じ -->
+                            <div class="slide">
+                                <div class="scroll_controler">
+                                    <label class="scroll_button scroll_prev" for="SlideA"></label>
+                                    <label class="scroll_button scroll_next" for="SlideC"></label>
+                                </div>
+                                <img src="../image/paris-4694708_1280.jpg" alt="shop2">
+                            </div>
+                            <!-- スライド（3番目）内容は1個めと同じ -->
+                            <div class="slide">
+                                <div class="scroll_controler">
+                                    <label class="scroll_button scroll_prev" for="SlideB"></label>
+                                    <label class="scroll_button scroll_next" for="SlideD"></label>
+                                </div>
+                                <img src="../image/restaurant-1343327_1280.jpg" alt="shop3">
+                            </div>
+                            <!-- スライド（4番目）内容は1個めと同じ -->
+                            <div class="slide">
+                                <div class="scroll_controler">
+                                    <label class="scroll_button scroll_prev" for="SlideC"></label>
+                                    <label class="scroll_button scroll_next" for="SlideA"></label>
+                                </div>
+                                <img src="../image/samos-997876_1280.jpg" alt="shop4">
+                            </div>
+                            <!-- スライド移動用ボタン -->
+                            <div class="move_controler">
+                                <!-- 1個目のスライドのボタン -->
+                                <!-- 一番上のラジオボタンの1個目のスライドのid”A”をforに定義します-->
+                                <label class="button_move" for="SlideA"></label>
+                                <label class="button_move" for="SlideB"></label>
+                                <label class="button_move" for="SlideC"></label>
+                                <label class="button_move" for="SlideD"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button>
+                        <div class="icon-wrapper">
+                            <img src="../image/電話の受話器のアイコン素材.png" alt="phone">
+                        </div>
+                        予約する
+                    </button>    
+                </div>
+            </section>
+        </div>
+        <!--ランチメニューパスタ-->    
+        <div class="container-lunchmenu">
+            <section class="lunchmenu" id="lunchmenu">
+                <div class="title">
+                    <img src="../image/lunchmenu.png" alt="about">
+                </div>
+                <h2>
+                    <img src="../image/pasta.png" alt="pasta-lunch">
+                </h2>
+                <div class="lunchmenu-img-text-container">
+                    <div class="lunchmenu-left">
+                        <img src="../image/pasta-img.png" alt="pasta">
+                        <img src="../image/pastamenu.png" alt="pasta-menu">
+                    </div>
+                    <div class="lunchmenu-right">
+                        <img src="../image/pastaselect.png" alt="pasta-select">
+                    </div>
+                </div>
+                <div>
+                </div>
+            </section>
+        </div>       
+        <!--ランチメニューピザ-->    
+        <div class="container-lunchmenu">
+            <section class="lunchmenu">
+                <div class="leaf-container">
+                    <img src="../image/leaf.png" alt="leaf">                
+                </div>
+                <h2>
+                    <img src="../image/pizza.png" alt="pizza-lunch">
+                </h2>
+                <div class="lunchmenu-img-text-container">
+                    <div class="lunchmenu-left">
+                        <img src="../image/pizza-img.png" alt="pizza">
+                        <img src="../image/pizzamenu.png" alt="pizza-menu">
+                    </div>
+                    <div class="lunchmenu-right">
+                        <img src="../image/pizzaselect.png" alt="pasta-select">
+                    </div>
+                </div>
+                <div>
+                </div>
+            </section>
+        </div>
+        <!--メニュー-->    
+        <div class="container-menu">
+            <section class="menu">
+                <div class="title">
+                    <img src="../image/menu.png" alt="menu">
+                </div>
+                <div>
+                    <div class="menu-img">
+                        <img src="../image/menu-left.png" alt="salad">
+                        <img src="../image/menu-center.png" alt="side-dish">
+                        <img src="../image/menu-right.png" alt="gokurakupurin">
+                    </div>
+                    <div class="menu-text">
+                        <img src="../image/menutextleft.png" alt="menu">
+                        <img src="../image/menutextright.png" alt="menu">
+                    </div>
+                </div>
+                <div>
+                </div>
+                <div class="btn">
+                    <button>
+                        <div class="icon-wrapper">
+                            <img src="../image/フォークとスプーンのお食事アイコン素材.png" alt="cutlery">
+                        </div>
+                        もっと見る
+                    </button>    
+                </div>
+            </section>
+        </div>
+        <!--お知らせ-->    
+        <div class="blog-container">
+            <section id="blog">
+                <div class="title">
+                    <img src="../image/information.png" alt="お知らせ">
+                </div>
+                <div class="blog-img-container">
+                    <img src="../image/blog-sample.png" alt="blog">
+                </div>
+            </section>
+        </div>
+        <!--アクセス-->    
+        <div class="container-access">
+            <section id="access">
+                <div class="title">
+                    <img src="../image/access.png" alt="access">
+                </div>
+                <div class="content">
+                    <div class="map">
+                        <img src="../image/sample-shop-map.png" alt="Map">
+                        <div class="btn map-btn">
+                            <a class="google-map-button" href="https://maps.app.goo.gl/Kn7h7q8ogQtqrjfZ9" target="_blank">
+                            <button>
+                                <div class="icon-wrapper">
+                                    <img src="../image/マップのピンアイコン.png" alt="mapicon">
+                                </div>
+                                GOOGLEマップ
+                            </button>    
+                            </a>
+                        </div>    
+                    </div>
+                    <div class="info">
+                        <img src="../image/sample-shop-summary.png" alt="store-info">
+                        <div class="signboard">
+                            <img src="../image/sample-shop-sign.png" alt="shop-signboard">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <img class="footer-logo" src="../image/sample-shop-logo.png" alt="Taverna LAPUTA logo">
+            <img class="footer-shopname" src="../image/about-shop-name.png" alt="店名">
+            <p>(c)2008-2024 Sample Sample.</p>
+        </div>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+</html>
